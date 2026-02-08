@@ -10,6 +10,8 @@
 
   const diceImages = [dice1, dice2, dice3, dice4, dice5, dice6];
 
+  const generateNumber = () => Math.floor(Math.random() * 6) + 1;
+
   console.log(diceResults);
 </script>
 
@@ -25,5 +27,7 @@
 
 <button
   style="display: block; background-color: rgb(255,219,187); padding: 25px; margin: 10px auto; font-weight: bold"
+  onclick={() =>
+    (diceResults = Array.from({ length: 5 }, (_, i) => generateNumber()))}
   >Dobás</button
 >
