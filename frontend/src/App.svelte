@@ -1,47 +1,18 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+  import dice1 from "./public/assets/dice-1.png";
+  import dice2 from "./public/assets/dice-2.png";
+  import dice3 from "./public/assets/dice-3.png";
+  import dice4 from "./public/assets/dice-4.png";
+  import dice5 from "./public/assets/dice-5.png";
+  import dice6 from "./public/assets/dice-6.png";
+
+  let diceResults = $state([1, 1, 1, 1, 1]);
+
+  const diceImages = [dice1, dice2, dice3, dice4, dice5, dice6];
+
+  console.log(diceResults);
 </script>
 
-<main>
-  <div>
-    <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
-
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
+{#each diceResults as diceResult}
+  <img src={diceImages[diceResult - 1]} alt={diceResult.toString()} />
+{/each}
