@@ -13,6 +13,17 @@
   console.log(diceResults);
 </script>
 
-{#each diceResults as diceResult}
-  <img src={diceImages[diceResult - 1]} alt={diceResult.toString()} />
-{/each}
+<div style="text-align: center;">
+  {#each diceResults as diceResult}
+    <img
+      src={diceImages[diceResult - 1]}
+      alt={diceResult.toString()}
+      style="margin-right: 20px;"
+    />
+  {/each}
+</div>
+
+<button
+  style="display: block; background-color: rgb(255,219,187); padding: 25px; margin: 10px auto; font-weight: bold"
+  >Dobás</button
+>
